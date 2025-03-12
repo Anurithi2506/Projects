@@ -37,13 +37,13 @@
             gap: 5px;
         }
         button {
-    width: 50px; /* Fixed width */
-    height: 50px; /* Fixed height to make it circular */
+    width: 50px; 
+    height: 50px; 
     font-size: 18px;
     
     margin: 10px;
     cursor: pointer;
-    border-radius: 40%; /* Makes buttons circular */
+    border-radius: 40%; 
     border: none;
     background: #4a3f3f;
     color: rgb(245, 244, 244);       
@@ -52,7 +52,7 @@
 
 button:hover {
     background: #666;
-    transform: scale(1.1); /* Slight zoom effect */
+    transform: scale(1.1); 
 }
 
         button.operator {
@@ -104,18 +104,16 @@ button:hover {
         }
         function backspace() {
         let display = document.getElementById("display");
-        display.value = display.value.slice(0, -1);  // Removes last character
+        display.value = display.value.slice(0, -1);  
         }
         function appendPower() {
     let display = document.getElementById("display");
-    display.value += "^"; // Adds a ^ symbol to separate base and exponent
-}
+    display.value += "^"; 
 
 function calculateResult() {
     let display = document.getElementById("display");
     let expression = display.value;
 
-    // Check if there is a power operation (x^y)
     if (expression.includes("^")) {
         let parts = expression.split("^");
         if (parts.length === 2) {
@@ -131,7 +129,6 @@ function calculateResult() {
         return;
     }
 
-    // If no power operation, evaluate normally
     try {
         display.value = eval(expression);
     } catch {
